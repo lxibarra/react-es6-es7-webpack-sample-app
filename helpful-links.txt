@@ -1,0 +1,5 @@
+
+https://github.com/hendrikswan/react-stack
+http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
+//React and Material UI
+http://www.material-ui.com/#/customization/themes
