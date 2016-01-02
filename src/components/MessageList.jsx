@@ -1,5 +1,8 @@
 import React from 'react';
 import Message from './Message.jsx';
+import mui from 'material-ui';
+
+let { Card, List } = mui;
 
 class MessageList extends React.Component {
     constructor(props) {
@@ -7,10 +10,7 @@ class MessageList extends React.Component {
          this.state = {
             messages:[
                 'Hi there how are you?',
-                'Im am fine and you',
-                'Example chat lines',
-                'Done',
-                'ja'
+                'Im am fine and you'
             ]
         };
     }
@@ -18,12 +18,19 @@ class MessageList extends React.Component {
     render() {
         var messageNodes = this.state.messages.map((message)=>{
            return (
-               <Message message={ message }/>
+               <Message message={ message } key={ Math.random() } />
            ); 
         });
         
         return (
-            <div> {messageNodes} </div>
+            <Card style={{
+                flexGrow:2,
+                marginLeft:30
+            }}>
+                <List> 
+                    {messageNodes}
+                </List> 
+            </Card>
         )
     }
 }

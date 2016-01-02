@@ -1,5 +1,5 @@
 import React from 'react';
-import Message from './Message.jsx';
+import Channel from './Channel.jsx';
 import mui from 'material-ui';
 
 var { Card, List } = mui;
@@ -9,23 +9,24 @@ class ChannelList extends React.Component {
         super(props);
         this.state = {
             messages: [
-                'Hi there how are you?',
-                'Im am fine and you',
-                'Example chat lines',
-                'Done',
-                'ja'
+                'Dogs',
+                'Cats'
             ]
         }
     }
     
     render() {
-        let messageNodes = this.state.messages.map((message)=>{
-            return (<Message message={message}/>)        
+        let channelNodes = this.state.messages.map((channel)=>{
+            return (<Channel channel={channel} key={ Math.random() }/>)        
         }); 
         
         return (
-            <Card>
-                {messageNodes}
+            <Card style={{
+                flexGrow:1
+            }} >
+                <List>
+                    {channelNodes}
+                </List>
             </Card>
         )
     }

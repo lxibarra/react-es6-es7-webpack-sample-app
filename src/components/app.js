@@ -1,5 +1,8 @@
 import React from 'react';
-import MessageList from './ChannelList.jsx';
+import ChannelList from './ChannelList.jsx';
+import MessageList from './MessageList.jsx';
+import MessageBox from './MessageBox.jsx';
+
 import mui from 'material-ui';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 //var ThemeManager = new mui.Styles.ThemeManager();
@@ -27,7 +30,17 @@ class App extends React.Component {
        return (
         <div>
             <AppBar title="Awesome Chat App"/>
+            <div style={{
+                display:"flex",
+                flexFlow:"row wrap",
+                maxWidth:1200,
+                width:'100%',
+                margin:'30px auto 30px'  
+            }}>
+            <ChannelList/>
             <MessageList/>
+            </div>
+            <MessageBox/>
         </div>
        )
     }
