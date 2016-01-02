@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageList from './MessageList.jsx';
+import MessageList from './ChannelList.jsx';
 import mui from 'material-ui';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 //var ThemeManager = new mui.Styles.ThemeManager();

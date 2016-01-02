@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 import App from './components/app';
 require('./main.scss');
 
 
-React.render(<App/>, document.getElementById('container'));
+ReactDom.render(<App/>, document.getElementById('container'));
