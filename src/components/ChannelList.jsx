@@ -14,12 +14,12 @@ class ChannelList extends React.Component {
             ]
         }
     }
-    
+
     render() {
         let channelNodes = this.state.messages.map((channel)=>{
-            return (<Channel channel={channel} key={ Math.random() }/>)        
-        }); 
-        
+            return (<Channel channel={channel} key={ Math.random() }/>)
+        });
+
         return (
             <Card style={{
                 flexGrow:1

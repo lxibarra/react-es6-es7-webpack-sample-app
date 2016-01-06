@@ -7,12 +7,12 @@ class Channel extends React.Component {
     constructor(props) {
         super(props)
     }
-    
+
     render() {
         return (
             <ListItem>
                 {this.props.channel}
-            </ListItem>                
+            </ListItem>
         )
     }
 }
