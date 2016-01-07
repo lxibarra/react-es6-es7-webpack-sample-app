@@ -15,14 +15,24 @@ class MessageList extends React.Component {
 
         this.firebaseRef = new Firebase('https://react-stack01.firebaseio.com/messages');
         this.firebaseRef.once('value', (snapshot)=>{
+          console.log('snapshot', snapshot);
           let messageVal = snapshot.val();
           let messages = _(messageVal)
-          //aqui me quede
+          .keys()
+          .map((messageKey)=> {
+              let cloned = _.clone(messageVal[messageKey]);
+              cloned.key = messageKey;
+              return cloned;
+          })
+          .value();
+
           this.setState({
             messages:messages
           })
         });
     }
+
+    
 
     render() {
         var messageNodes = this.state.messages.map((message)=>{
