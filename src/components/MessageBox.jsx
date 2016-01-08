@@ -16,7 +16,7 @@ class MessageBox extends React.Component {
     }
 
     onChange(evt) {
-      this.setState({message:evt.target.value});
+      this.setState({message:evfacet.target.value});
     }
 
     onKeyUp(evt) {
