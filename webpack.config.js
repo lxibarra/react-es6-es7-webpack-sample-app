@@ -17,16 +17,17 @@ module.exports = {
     },
     plugins:[
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin()  
+      new webpack.NoErrorsPlugin()
     ],
     module: {
         loaders:[
-            { 
-                test: /\.jsx?$/, 
-                exclude: /node_modules/, 
-                loader: "babel", 
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: "babel",
                 query: {
-                    presets: ['es2015', 'stage-0', 'react']
+                    presets: ['es2015', 'stage-0', 'react'],
+                    plugins: ['transform-decorators-legacy' ],
                 }
            },
            {
