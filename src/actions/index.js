@@ -2,6 +2,14 @@ import alt from '../alt';
 import Firebase from 'firebase';
 
 class Actions {
+
+  constructor() {
+    this.generateActions(
+      'channelsReceived',
+      'channelsFailed'
+    );
+  }
+
   login(args) {
     return (dispatch)=> {
         let firebaseRef = new Firebase("https://react-stack01.firebaseio.com");
@@ -10,7 +18,7 @@ class Actions {
             return;
           }
 
-          dispatch(user);  
+          dispatch(user);
 
         });
     }
