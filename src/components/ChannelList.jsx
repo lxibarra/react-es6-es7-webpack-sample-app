@@ -12,6 +12,7 @@ class ChannelList extends React.Component {
     constructor(props) {
         super(props);
         ChatStore.getChannels();
+
     }
 
     static getStores() {
@@ -42,7 +43,7 @@ class ChannelList extends React.Component {
             </Card>
           )
         }
-
+        console.log()
         let channelNodes = _(this.props.channels)
             .keys()
             .map((k)=>{
@@ -51,6 +52,8 @@ class ChannelList extends React.Component {
                 <Channel channel={channel} />
               );
         }).value();
+
+        console.log(channelNodes);
 
         return (
             <Card style={{

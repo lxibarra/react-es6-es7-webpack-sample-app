@@ -11,18 +11,26 @@ class ChatStore {
     this.state = { user:null };
   }
 
+  @bind(Actions.channelsReceived)
   receivedChannels(channels) {
       let selectedChannel;
       _(channels)
-      .key()
+      .keys()
       .each((key, index)=>{
-          console.log('each key:',key);
           channels[key].key = key;
           if(index == 0) {
             channels[key].selected = true;
             selectedChannel = channels[key];
           }
+
       }).value();
+
+      //i think this is failing, error on set state in unmounted
+      this.setState({
+        channels,
+        selectedChannel
+      })
+
   }
 
   @bind(Actions.login)
